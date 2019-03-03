@@ -8,7 +8,7 @@ ENV GOROOT=/usr/local/go
 ENV GOPATH=/data
 ENV PATH=$GOPATH/bin:$GOROOT/bin:$PATH
 
-RUN apt-get update && apt-get install -y curl wget build-essential bison libncurses5-dev libncursesw5-dev && \
+RUN apt-get update && apt-get install -y curl wget build-essential bison libncurses5-dev libncursesw5-dev cmake autoconf && \
     curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add - && \
     echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
     apt-get update && apt-get install -y yarn && \

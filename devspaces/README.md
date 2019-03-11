@@ -38,9 +38,10 @@ devspaces start cockroachdb
 Open terminal on folder you want to sync with devspaces and run:
 
 ```bash
-cd ..
 devspaces bind cockroachdb
 ```
+**Important Note**: Cockroach is a GoLang application. It is essentials to have a source code inside folder structure like this `$GOPATH/src/github.com/cockroachdb`. This is a recommend way to structure GoLang application and namely for CockroachDb project, since build will fail otherwise.
+
 4. Grab some container info
 
 ```bash
@@ -55,20 +56,22 @@ Retrieve published DNS, endpoints using this command and
 devspaces exec cockroachdb
 ```
 
-6. Download and extract packaged source code
+6. Make sure the source code is synced and build the product
+
 ```bash
-wget -qO- https://binaries.cockroachdb.com/cockroach-v2.1.5.src.tgz | tar  xvz
+cd ./src/github.com/cockroachdb/cockroach
+make build
 ```
 
-7. Build the product
+7. You may run the tests.
+
 ```bash
-cd cockroach-v2.1.5
-make build
+make test
 ```
 
 8. Run server
 ```bash
-./src/github.com/cockroachdb/cockroach/cockroach start --insecure
+./cockroach start --insecure
 ```
 
 ## Running CockroachDB via Docker-Compose file

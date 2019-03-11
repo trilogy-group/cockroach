@@ -11,15 +11,13 @@ docker-file: docker/Dockerfile
 # include here. They are relative to this devspaces.yml file.
 docker-build-includes: |
   **/*
+  
 ports:
-  - protocol: http # can be udp|tcp|http
+  - protocol: tcp # can be udp|tcp|http
     port-number: 8080
-    description: web app http port
+    description: cockroach port
     
 sync-ignore: |
   .idea
-  **/node_modules
-  **/build
-  **/out
   .DS_Store
   .data

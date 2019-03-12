@@ -4,9 +4,7 @@
 
 1. Create and install devspaces client as it is written in help guide https://support.devspaces.io/article/22-devspaces-client-installation.
 
-2. Deploy your development environment into DF devspaces following this guide https://support.devspaces.io/article/23-support-guidelines 
-
-3. Here is some details about DF Devspaces https://devspaces.io/devspaces/help
+2. Here is some details about DF Devspaces https://devspaces.io/devspaces/help
 
 Here follows the main commands used in Devspaces cli. 
 
@@ -22,6 +20,8 @@ Use `devspaces --help` to know about updated commands.
 
 
 ### Start Devspaces 
+
+It is assumed that terminal is opened in `devspaces` folder of the repository.
 
 1.  Create DevSpaces.
 
@@ -40,7 +40,7 @@ Open terminal on folder you want to sync with devspaces and run:
 ```bash
 devspaces bind cockroachdb
 ```
-**Important Note**: Cockroach is a GoLang application. It is essentials to have a source code inside folder structure like this `$GOPATH/src/github.com/cockroachdb`. This is a recommend way to structure GoLang application and namely for CockroachDb project, since build will fail otherwise.
+**Important Note**: Cockroach is a GoLang application. It is essentials to have a source code inside folder structure like this `$GOPATH/src/github.com/cockroachdb`. This is a recommend way to structure GoLang application and namely for CockroachDB project, since build will fail otherwise.
 
 4. Grab some container info
 

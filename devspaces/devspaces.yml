@@ -13,7 +13,7 @@ docker-build-includes: |
   **/*
   
 ports:
-  - protocol: tcp # can be udp|tcp|http
+  - protocol: http # can be udp|tcp|http
     port-number: 8080
     description: cockroach port
     

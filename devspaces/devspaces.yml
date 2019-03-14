@@ -1,0 +1,23 @@
+--- # devspaces.yml
+name: cockroachdb
+description:  Development environment for CockroachDB
+
+# If you want to use a different Dockerfile for your DevSpace, provide the path
+# here.
+docker-file: docker/Dockerfile
+
+# If you need additional files when building your Dockerfile, such as some
+# application binaries that your Dockerfile references, list the glob paths to
+# include here. They are relative to this devspaces.yml file.
+docker-build-includes: |
+  **/*
+  
+ports:
+  - protocol: http # can be udp|tcp|http
+    port-number: 8080
+    description: cockroach port
+    
+sync-ignore: |
+  .idea
+  .DS_Store
+  .data
